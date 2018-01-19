@@ -1,0 +1,310 @@
+# Changelog
+### 1.4.3 - August 3, 2017
+- Class definitions and object instantiation are reverted back to inside inGame() function
+    - Fixed crashes and bugs caused by variable/class scope issues
+        - Fixed player gold showing up as 0 in shop description when in shops (player still had normal gold and could buy stuff as normal)
+- oilCounter is re-added properly to beginning of counter initialization
+- Changed "About this Game" to only show starting date
+### 1.4.2 - Feb. 18, 2017
+- Decrementing hunger changed to Stat method
+### 1.4.1 - Feb. 6, 2017
+- Added another example to How to Play
+- Changed the spacing for room descriptions
+- Recommendation to play in fullscreen removed
+### 1.4.0 - Feb. 6, 2017
+- Class definitions moved outside of inGame() loop
+- Implemented Help System
+    - How to play provides all command shortcuts
+    - Command shortcuts can be accessed in-game with "help"
+    - "h" implemented and added to shortcuts ("hunger")
+    - Main and secondary objectives implemented to guide players at any point in the game ("objective")
+    - "o" implemented and added to shortcuts ("objective")
+- HUNGER_WARNING increased from 9 to 15 (original value)
+- roomMountEntrance now has foliage block message for East and West
+- Direction descriptions at roomRoad2Mid and roomRoadMid now describe adjacent rooms once sign has been read
+- "<Direction> is inside" descriptions now more descriptive
+- LAKE_GOLD_REWARD increased from 183 to 241
+### 1.3.4 - Feb. 4, 2017
+- HUNGER_PORRIDGE is set to HUNGER_MAX
+- Added "heal" and "heal wound(s)/injury/bleeding/self" as alternative to use bandage
+- How to Play is more descriptive and help command added in game
+- Fixed examining roomRoadMid sign giving roomRoad2Mid sign description
+- Fixed darkness loop not having the same input spacing
+- Entering darkness now sets shield to 0
+- Fixed taking potato/potatoes not working
+- Can now "set dial <colour>" in roomHousePantry
+- Changed Vesh'kathal staff knockout text to be more clear
+- Fixed creature blinded by light message not appearing when escaping to roomMountEntrance
+- Fixed dropping and taking rotten potato not working
+- Vault door now has exactly 2 dials set to correct answer and 2 not to correct answer
+    - Prevents 3 or all dials starting off correct by chance
+- Changing dials or levers to the position they already are in displays a message
+- Can now bet "all,every" gold or "no,none" gold correctly in roomCarnivalShellGame
+- roomCarnivalShellGame text spacing improved
+- Can now "examine through slit", "look through small slit" etc. in roomJailCell
+- roomRoad2North is now roomHouseGate
+- Key of Ahm'domosh can now unlock the roomHouseGate, roomLake lockbox
+- Attempting to unlock roomHouseGate or roomLake lockbox has messages with inv.key or not inv.key
+### 1.3.3 - Feb. 4, 2017
+- Changed lantern, hunger and wound warning messages to be normal case and more clear in meaning.
+- Increased COAL_MIN,COAL_MAX from 5,8 to 6,9
+- Potion of rejuvination now provides a shield for HUNGER_POTION duration, preventing player from getting harmed (but not killed).
+- Fixed rejuvination typos
+- Added "exit game"
+- Removed unused help_counter
+- Changed How to Play description spacing
+- Changed About this Game description to be more concise
+### 1.3.2 - Jan. 25, 2017
+- Fixed "again" command crashing game if first turn
+- Fixed problem with "taking" "rotten potato."
+- Fixed various typos.
+- Fixed lantern warnings not being in caps.
+- Fixed "pick up" splitting one character too late.
+### 1.3.1 - Jan. 23, 2017
+- Fixed a crash when restarting
+- Grappling hook price increased from 350 to 400
+- CHEST_REWARD increased from 263 to 324
+### 1.3.0 - Jan. 23, 2017
+- Added password for debug mode (uses getpass library to not show password in terminal window)
+- Examine "self","stat","stats" prints health and hunger information
+- Rubble now blocks north roomTempleInside
+- roomBarnUp letter revamped to reveal "eyik vo'hollom" as password for obsidian sphere, and explain the importance of staff
+    - letter is now it's own item "memo" so both letter and memo can be simultaneously acquired
+- Added South shrine that connects to North Shrine
+    - roomForest is outside south shrine
+    - roomRoad2East renamed to roomField
+    - password to enter is "eyik vo'hollom"
+- Player is only silenced at house
+    - Once player leaves house, no longer silenced
+    - Silenced again if returns to house
+        - From mysterious book or by walking in/out
+- Veiled woman no longer spawnable if cell door is spell unlocked
+    - If no name set, default is "the hero of Kashkaval"
+- Veiled woman does not spawn if already asked name
+- Improved "How to Play" to clarify how commands work at menu
+- Removed excess directional roads to streamline movement
+- Revamped examine commands to include more variation
+    - Can now examine items in room (not in inventory)
+- Revamped buy/sell commands to allow for quantities
+- Sell now allows for "all" and "every"
+- Added wooden bird (again) for injured stranger (now just stranger) quest instead of bandage, placed in roomCave_2m
+- Ozh sol fek spell added in roomCave_4_mr (still in journal)
+- Added directionBlock for forest messages
+- Vault door moved from roomJailCorridor to roomMountEntrance to decrease repetition after death
+- Treasure chest in roomCave__3_lllm_treasure_crevasse is now locked.
+    - Can be opened with Ozh vo'ses sa
+- Changed the connection between some rooms in the cave
+    - Should be easier to move from North to South (easier when escape creature to south entrance)
+    - Should be easier to find coal going from South to North
+    - Dead body, when examined has NOTE item with answer
+    - Dead body has 3 pieces of coal
+- Gold removed from roomJailFoyer (bait gold)
+- Updated potato description to warn of death.
+- Potato is now called Rotten potato
+- HUNGER_WARNING decreased from 15 to 9 turns
+- Game balance
+    - COAL_MIN,COAL_MAX from 6-10 to 5-8
+    - CHEST_REWARD decreased from 463 to 263
+    - PRICE_BUY_TICKET increased from 10 to 20
+    - PRICE_BUY_FOOT increased from 15 to 30
+    - HUNGER_MAX decreased from 100 to 80
+    - HUNGER_PORRIDGE increased from 65 to 70
+    - HUNGER_PIE decreased from 80 to 70
+    - HUNGER_CHEESE increased from 2 to 10
+    - Chicken pot pie from roomHouseKitchen removed
+    - roomJailCell haystack loot from 1 gold to 2 gold and 1 hardtack biscuit
+        - Made it worth the turn loss
+    - roomCourtyardNorth gold increased from 9 to 16
+    - Grappling hook buy price increased from 250 gold to 350 gold
+    - Dragonstone sell price increased from 150 gold to 300 gold
+    - Porridge hunger increased from 60 to 65
+    - LOOT_B_GOLD increased from 76 to 96
+    - LOOT_A_GOLD increased from 87 to 187
+    - LOOT_A_BISCUIT increased from 3 to 4
+    - CREATURE_ROAM_MIN decreased from 26 to 22
+- Improvements
+    - Direction prompts are more clear
+    - Creature does not despawn or stop roaming when crossing the crevasse unless it is already visible
+    - Examine hunger and health do not count as turns
+    - Examine hunger no longer prints additional invalid turn text
+    - Examine hunger and health commands both display numerical hunger and health values
+    - Improved clarity and formatting of various text
+    - Examine now factors in "examine a" and "examine the"
+    - Added "pick up", "grab", "obtain", "acquire"
+    - Added "remove", "discard"
+    - Added "rotate"
+    - Added "gamble" and to bet "all"
+    - Fixed roomLake injured stranger text not applying to the right conditions
+    - Fixed askName instantly killing player in roomJailCell if they do not respond
+    - Letter instructions are more clear
+    - Letter with default name is spawned in roomJailCorridor if cell door is spell unlocked
+    - "Again" command no longer crashes if it is the first command done
+### 1.2.0 - Jan. 15, 2017
+- Removed roomCave_3_llllm_crevasse and roomCave_3_lllm to make treasure chest more obvious
+- Replaced lake reward with lockbox
+- Moved Ozh ensh, Ozh vo'ses sa to roomLake
+- Moved Ozh sol fek to journal
+- Added Ozh thok alatho to roomLairEast
+- Added "light lantern" command
+- Creature will not spawn if in first cave room (roomCave_1_m)
+    - If player wants to enter cave first, then light lantern
+- 2 random roomJailCorridor vault numbers will already be set to the correct answer
+- Block descriptions added along invalid road directions
+- Game balance
+    - Increased max hunger from 50 to 100
+    - Increased food hunger values
+        - Porridge hunger increased from 50 to 60
+        - Pie hunger increased from 40 to 80 (4 hunger/gold)
+        - Funnel cake hunger increased from 10 to 20 (4 hunger/gold)
+        - Potion hunger increased from 40 to 125 (5 hunger/gold, or 12.5 hunger/gold if refill)
+        - Biscuit hunger increased from 15 to 30
+            - LOOT_MID_BANDAGE decreased from 4 to 1
+            - HUNGER_DARKNESS increased from 25 to 30
+        - Cheese hunger decreased from 3 to 2
+    - Oil duration increased from 25 to 30
+    - Rubble fall chance decreased from 5% to 1%
+    - Pickaxe break chance decreased from 7% to 1%
+    - Lucky foot modifier increased from 25% to 100%
+    - Raffle compensation increased from 150 gold to 200 gold
+    - Creature roam minimum increased from 24 to 26
+    - Lake gold reward increased from 143 gold to 183 gold
+    - LOOT_WEST_GOLD increased from 14 to 42
+- Improvements
+    - Fixed typo in various room descriptions
+    - Improved clarity for various room descriptions
+    - Spells with descriptions are now added to spell list if used validly
+    - Shops and bridge now display player gold values upon entering
+    - Staff and kill spell can be used against creature in lair and cave, but has no effect
+    - Staff and kill spell can be used in carnival wheel game and jail, resulting in death
+    - Blacksmith first time description added to clarify that coal is found in the Mount Magna mine
+    - Examining room does not count as turn
+    - Moving into blocked direction does not count as turn
+    - Indented movement text
+    - Added !spells and !learn debug commands
+    - Capitalized final death warning messages for health and hunger
+### 1.1.0 - Jan. 14, 2017
+- Completed:
+    - Injured stranger fetch quest to roomLake to replace lake apparition
+        - Provides early game reward of 143 gold and 1 pie for bandage and increases clarity of "Ozh ensh"
+        - Tablet now reads non-spell, "Eyik vo'hollom"
+    - Cannot eat or drink anything if hunger is above HUNGER_MAX
+    - Added 5% chance of rubble falling from ceiling and injuring player when moving around in normal cave
+        - Make bandages serve a purpose
+    - Increased CREATURE_ROAM from 18-32 to 24-32 to compensate
+- Game balance:
+    "Game was too difficult from escaping jail to passing bridge troll. Rewards were increased for entering the cave, the risk getting caught by the creature with a light source decreased."
+    - Increased raffle ticket refund from 100 gold to 150 gold
+    - Increased the cave body loot gold, vial and biscuit rewards
+    - Swapped cave bodies so explorer with journal is closet to entrance
+    - Increased dragonstone sell price from 120 gold to 150 gold
+        - LOOT_A gold and biscuit from 14 and 2 to 87 and 3 respectively
+        - LOOT_B gold from 29 to 76
+        - LOOT_C oil from 1 to 2
+    - Increased the cave treasure chest gold reward from 263 to 463
+    - Increased the range of coal quantity in coal mines from 4-6 to 6-10
+    - Increased cave creature roam and chase variance and average times
+        - CREATURE_ROAM from 16-26 to 18-32
+        - CREATURE_CHASE from 14-20 to 16-22
+    - Added earlier warning for creature chase
+    - Pickaxe break chance increased from 5% to 7%
+    - Food hunger values increased and standardized to make food purchases more balanced and hunger/gold ratios more fair
+        - Pie hunger increased from 35 to 40 hunger (2 hunger/gold)
+        - Potion hunger increased from 20 to 30
+            - Potion cost increased from 20 to 25 (1.2 hunger/gold)
+            - Refill is now more efficient (3 hunger/gold)
+- Improvements:
+    - Buying and refilling now display total money after purchase
+    - Fixed lack of error message when selling invalid item
+    - Examining inventory now does not count as a turn
+    - Examining spells does not count as a turn
+        - Convenience factor when checking for gold and other item quantities
+    - Fixed grappling hook now spawning hook on opposite end of crevasse once thrown
+    - Take all in lair chase counts as 2 turns to be equivalent to taking each item individually
+    - Added examine text for roomHouseGate, roomFarm, roomBarnUp, roomShrineNorth, roomHouseFoyer, roomHouseKitchen, roomHousePantry, roomHouseHallway
+    - Updated barn letter
+    - Fixed roomBookMirror text
+    - Fixed "spells" etc. command
+    - Fixed roomGate description text
+    - Made invalid give, open, close not count as a turn
+    - changeRoom is now default False
+    - Fixed mysterious book inventory interactions with key of Ahm'domosh
+    - Fixed selling dragonstone not removing dragonstone from inventory
+    - Fixed giving Roquefort staff crashing the game
+### 1.0.1 - Jan. 13, 2017
+- Fixed Alchemist's hut crash on entering a second time.
+- Fixed cave pathing
+- Fixed Roquefort telepathy message to occur after staff is acquired
+- Fixed roomTempleInside description text
+- Fixed taking backpack items in creature lair and lair chase sequence
+- Fixed using vial of lantern oil not removing vial from inventory
+### 1.0.0 - Jan. 13, 2017 - Completed all main features to complete a playthrough of the game
+- Completed:
+    - Added command prompt window resize on launch
+   	    - Alchemist's Hut - Activatable shop
+   	    - Dragonstone fetch quest
+        - Potion
+        - Flask
+        - Fill command
+- Game balance
+    - Adjusted prices and rewards values
+### 0.9.0 - Jan. 11, 2017
+- Completed:
+    - Game ending
+    - Debug mode
+    - Roquefort house
+    - Creature lair
+    - Field roads
+    - Farm and barn
+    - Black knight enemy
+    - Ozkavosh shrine, Mysterious book and book puzzles
+    - Roquefort telepathy messages
+    - Ozkavosh spells and spellbook
+    - Up and down movement
+    - Cheese slices
+    - Biscuits
+    - Lootable corpses in cave
+    - Journal in cave
+    - Take all and drop all
+- Improvements
+    - Main menu splash art
+    - Jail size and room improvements
+    - Various item and room descriptions to add clarity and detail
+    - Temple inner sanctum
+    - Temple murals
+    - Revamped jail letter text
+    - Replaced wooden bird with shrubbery
+    - 5% change of breaking pickaxe when mining
+### 0.6.0 - Jan. 03, 2017
+- Completed:
+    - Gate guard quest
+    - General store
+    - Mining system
+    - Funnel cake buy limit
+    - Wheel game room and ticket system
+    - Improvements:
+    - Give command
+    - Buy command
+    - Look command
+    - Use staff
+### 0.5.1 - Dec. 12, 2016
+- Completed:
+    - Grappling hook mechanic
+    - Cave pathing
+    - Improvements:
+    - Shell game gold limit
+### 0.5.0 - Dec. 11, 2016
+- Completed:
+    - Bridge and temple
+    - Menu changes:
+    - Changelog (Wow. Such meta.)
+    - About game information
+    - Restart game menu
+### 0.1.0 - 0.4.0 - Oct. 17, 2016 - Dec. 10, 2016
+- Completed:
+    - Room and movement system
+    - Inventory and item system
+    - Buying/selling/betting system
+    - Examine/read/description system
+    - Jail, town, most of cave
+    - Cave creature and jail guard chasing mechanics
+    - Hunger and health system
