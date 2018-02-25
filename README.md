@@ -9,7 +9,7 @@ Table of Contents
     - [Functions](#learning-about-functions)
     - [Classes](#learning-about-classes)
     - [Saving](#learning-about-saving-games-to-files)
-3. [Notes on Design Decisions](notes-on-design-decisions)
+3. [Notes on Design Decisions](#notes-on-design-decisions)
     - [Player death](#player-death)
     - [Forewarning of death](#forewarning-of-death)
     - [Tedious content](#tedious-content)
