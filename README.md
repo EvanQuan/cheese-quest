@@ -34,6 +34,7 @@ Cheese Quest started development in 2016 while I was in my 3rd year majoring Geo
 I began working on it shortly after I started taking my first intro to computer science course for non-computer science majors (CPSC 217).
 
 As a result, the code was essentially a giant series of if/elif/else statements encased in a single multi-thousand line while-loop, where problems were repeatedly solved with ad hoc band-aid fixes with little code reusability.
+
 #### Learning about standard input and output
 As soon as I learned that I could receive input from the keyboard and output text to the screen, I knew I wanted to create a simple IF game.
 Infocom's Hitchhiker's Guide to the Galaxy IF released in 1984 was a big part of my childhood and a game I really came to appreciate because the whole concept of a game based on a typing in commands seemed so cool and different from any other games I've played.
@@ -58,6 +59,18 @@ Yeah... I never figured this out during the game's development, which is why the
 It probably would have helped if the game's state was actually contained as an object that could be saved as a file instead of just being a while-loop changing a bunch of local and global variables.
 
 This problem is one of the central reasons that prompted me to start development on [Cheese Quest 2](https://github.com/EvanQuan/CheeseQuest2).
+
+#### Abandonment
+Shortly after starting my second Computer Science course (CPSC 219) and learning about object-oriented programming, it quickly dawned on me just how terribly designed my initial approach to the game was.
+I kind of already knew that the code was designed terribly since I had to move around the file in 4 or 5 different locations if I wanted to add a new item or room, but it really began sinking in as I began to learn more.
+I eventually completed the game to the point that it was actually winnable, and continued changing and adding content afterwards due to feedback. This was all the while the idea of creating a new version of the game from scratch lurked in the back of my mind.
+But I increasingly began to consider that if I were to increase the game's scope that I would have to make some drastic changes to the code if I were to continue working on it.
+
+After learning about creating GUIs through Java's javax.swing and java.awt packages, I finally decided I would remake Cheese Quest in Java.
+I liked Java's approach to object-oriented programming better than Python's, and while I'm probably in the minority here, I also liked its overly verbose syntax as well.
+I abandoned any serious development of the Python version although I occationally made small patches afterwards.
+
+*Moral of the story: Creating a game with little to no prior Computer Science knowledge and building upon it until it grows into a monstrosity is probably not a good idea.*
 
 ## Notes on Design Decisions
 *I made some notes while developing this game. I thought I'd put them here just for historical documentation purposes. **They contain spoilers** since they were notes for myself and not for anyone else:*
