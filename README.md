@@ -2,9 +2,11 @@ Cheese Quest: The Plight of Kashkaval
 ====================================
 
 ![main_menu](https://github.com/EvanQuan/CheeseQuest/wiki/main_menu.PNG)
+
 *Figure 1: Main menu. Everything is ran straight in the terminal.*
 
 ![alchemist_hut](https://github.com/EvanQuan/CheeseQuest/wiki/alchemist_hut.PNG)
+
 *Figure 2: In game.*
 
 
